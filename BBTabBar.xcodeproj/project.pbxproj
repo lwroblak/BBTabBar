@@ -10,6 +10,7 @@
 		1D1C1D32269328F200AFCDEF /* BBTabBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1C1D28269328F200AFCDEF /* BBTabBar.framework */; };
 		1D1C1D37269328F200AFCDEF /* BBTabBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C1D36269328F200AFCDEF /* BBTabBarTests.swift */; };
 		1D1C1D39269328F200AFCDEF /* BBTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D1C1D2B269328F200AFCDEF /* BBTabBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D1C1D432693335C00AFCDEF /* BBTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C1D422693335C00AFCDEF /* BBTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		1D1C1D31269328F200AFCDEF /* BBTabBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBTabBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1C1D36269328F200AFCDEF /* BBTabBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBTabBarTests.swift; sourceTree = "<group>"; };
 		1D1C1D38269328F200AFCDEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D1C1D422693335C00AFCDEF /* BBTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				1D1C1D2B269328F200AFCDEF /* BBTabBar.h */,
 				1D1C1D2C269328F200AFCDEF /* Info.plist */,
+				1D1C1D422693335C00AFCDEF /* BBTabBar.swift */,
 			);
 			path = BBTabBar;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				TargetAttributes = {
 					1D1C1D27269328F200AFCDEF = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 					1D1C1D30269328F200AFCDEF = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D1C1D432693335C00AFCDEF /* BBTabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +346,7 @@
 		1D1C1D3D269328F200AFCDEF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U5C7AQ4E68;
@@ -357,6 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lib.BBTabBar;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +372,7 @@
 		1D1C1D3E269328F200AFCDEF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U5C7AQ4E68;
@@ -389,6 +397,7 @@
 		1D1C1D40269328F200AFCDEF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U5C7AQ4E68;
 				INFOPLIST_FILE = BBTabBarTests/Info.plist;
@@ -407,6 +416,7 @@
 		1D1C1D41269328F200AFCDEF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U5C7AQ4E68;
 				INFOPLIST_FILE = BBTabBarTests/Info.plist;
