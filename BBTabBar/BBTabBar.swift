@@ -13,7 +13,7 @@ enum State {
     case extended
 }
 
-@IBDesignable class TabBarBB: UITabBar {
+@IBDesignable class BBTabBar: UITabBar {
     
     @IBInspectable var color: UIColor?
     @IBInspectable var radii: CGFloat = 15.0
