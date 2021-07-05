@@ -13,7 +13,7 @@ enum State {
     case extended
 }
 
-@IBDesignable class BBTabBar: UITabBar {
+@IBDesignable public class BBTabBar: UITabBar {
     
     @IBInspectable var color: UIColor?
     @IBInspectable var radii: CGFloat = 15.0
@@ -30,9 +30,11 @@ enum State {
     private var tabBarHeightExtended: CGFloat! = 265
     private var totalScreenHeight: CGFloat! = UIScreen.main.bounds.height
     
+    private var showDelay = 0.2
+    
     private var isAnimating: Bool = false
     
-    override func draw(_ rect: CGRect) {
+    public override func draw(_ rect: CGRect) {
         addShape()
     }
     
@@ -75,15 +77,7 @@ enum State {
         UIView.addChildToContainer(parent: contentView!, child: controller.view)
     }
     
-    private func createPath() -> CGPath {
-        let path = UIBezierPath(
-            roundedRect: bounds,
-            byRoundingCorners: [.topLeft, .topRight],
-            cornerRadii: CGSize(width: radii, height: 0.0))
-        return path.cgPath
-    }
-    
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         self.isTranslucent = true
         var tabFrame            = self.frame
@@ -96,42 +90,41 @@ enum State {
         
     }
     
-    public func updateLayout(origin: CGFloat, height: CGFloat) {
-        var tabFrame            = self.frame
-        tabFrame.size.height    = height
-        tabFrame.origin.y       = origin
-        self.layer.cornerRadius = 20
-        self.frame            = tabFrame
-        self.layoutSubviews()
-    }
-    
-    public func showNormal() {
+    public func showNormal(duration: Double = 0.5) {
         guard isAnimating == false else {
             return
         }
         isAnimating = true
-        hideTabBar(state: .extended)
-        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-            self.showTabBar(state: .normal) {
+        hideTabBar(state: .extended, duration: duration)
+        DispatchQueue.main.asyncAfter(deadline: .now()+duration+showDelay) {
+            self.showTabBar(state: .normal, duration: duration) {
                 self.isAnimating = false
             }
         }
     }
     
-    public func showExtended() {
+    public func showExtended(duration: Double = 0.5) {
         guard isAnimating == false else {
             return
         }
         isAnimating = true
-        hideTabBar(state: .normal)
-        DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
-            self.showTabBar(state: .extended) {
+        hideTabBar(state: .normal, duration: duration)
+        DispatchQueue.main.asyncAfter(deadline: .now()+duration+showDelay, execute: {
+            self.showTabBar(state: .extended, duration: duration) {
                 self.isAnimating = false
             }
         })
     }
     
-    private func hideTabBar(state: State) {
+    private func createPath() -> CGPath {
+        let path = UIBezierPath(
+            roundedRect: bounds,
+            byRoundingCorners: [.topLeft, .topRight],
+            cornerRadii: CGSize(width: radii, height: 0.0))
+        return path.cgPath
+    }
+    
+    private func hideTabBar(state: State, duration: Double = 0.5) {
         guard contentView != nil else {
             print("TabBarBB: Content controller not set")
             return
@@ -143,14 +136,14 @@ enum State {
         magicOriginY = totalScreenHeight
         magicHeight = state == .normal ? tabBarHeightNormal :tabBarHeightExtended
         
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: duration, animations: {
             self.frame = frame
         }) { _ in
             self.contentView?.removeFromSuperview()
         }
     }
     
-    private func showTabBar(state: State, onCompleted: @escaping ()->()) {
+    private func showTabBar(state: State, duration: Double = 0.5, onCompleted: @escaping ()->()) {
         guard contentView != nil else {
             print("TabBarBB: Content controller not set")
             return
@@ -166,7 +159,7 @@ enum State {
         magicOriginY = totalScreenHeight - (state == .normal ? tabBarHeightNormal :tabBarHeightExtended)
         magicHeight = state == .normal ? tabBarHeightNormal :tabBarHeightExtended
         
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: duration, animations: {
             self.frame = frame
         }) { _ in
             self.layoutSubviews()
