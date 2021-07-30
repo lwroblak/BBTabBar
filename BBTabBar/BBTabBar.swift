@@ -28,6 +28,8 @@ enum State {
     private var tabBarHeightNormal: CGFloat! = 65
     private var tabBarHeightExtended: CGFloat! = 265
     private var contentHeight: CGFloat = 0
+    private var contentMarginTop: CGFloat = 0
+    private var contentMarginBottom: CGFloat = 0
     
     //tabbar item frames
     private var tItemFrames = [UITabBarItem : CGRect]()
@@ -91,6 +93,8 @@ enum State {
         contentView = UIView(frame: CGRect(x: marginLeft, y: marginTop, width: frame.width-marginLeft-marginRight, height: contentHeight));
         contentView!.backgroundColor = .gray
         tabBarHeightExtended = tabBarHeightNormal + contentHeight + marginTop + marginBottom
+        contentMarginTop = marginTop
+        contentMarginBottom = marginBottom
         UIView.addChildToContainer(parent: contentView!, child: controller.view)
     }
     
@@ -182,7 +186,7 @@ enum State {
         
         tItemFramesMutable = tItemFrames.mapValues({ frame in
             var newFrame = frame
-            newFrame.origin.y = state == .extended ? newFrame.origin.y + contentHeight + 40 : newFrame.origin.y
+            newFrame.origin.y = state == .extended ? newFrame.origin.y + contentHeight + contentMarginTop + contentMarginBottom : newFrame.origin.y
             return newFrame
         })
         
@@ -227,5 +231,6 @@ public extension UIView {
     }
     
 }
+
 
 
