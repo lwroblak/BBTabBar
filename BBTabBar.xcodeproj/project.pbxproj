@@ -11,6 +11,8 @@
 		1D1C1D37269328F200AFCDEF /* BBTabBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C1D36269328F200AFCDEF /* BBTabBarTests.swift */; };
 		1D1C1D39269328F200AFCDEF /* BBTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D1C1D2B269328F200AFCDEF /* BBTabBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D1C1D432693335C00AFCDEF /* BBTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C1D422693335C00AFCDEF /* BBTabBar.swift */; };
+		BBE542B9575D5E518C89575D /* Pods_BBTabBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00C7A1224A0D2DB930624B7 /* Pods_BBTabBar.framework */; };
+		DF00948825BAE3893752686D /* Pods_BBTabBar_BBTabBarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 981137C003758EECCCED625C /* Pods_BBTabBar_BBTabBarTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,12 @@
 		1D1C1D36269328F200AFCDEF /* BBTabBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBTabBarTests.swift; sourceTree = "<group>"; };
 		1D1C1D38269328F200AFCDEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D1C1D422693335C00AFCDEF /* BBTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBTabBar.swift; sourceTree = "<group>"; };
+		3468BA07303712CFE0D13490 /* Pods-BBTabBar-BBTabBarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBTabBar-BBTabBarTests.release.xcconfig"; path = "Target Support Files/Pods-BBTabBar-BBTabBarTests/Pods-BBTabBar-BBTabBarTests.release.xcconfig"; sourceTree = "<group>"; };
+		689D9A062C951B8781771134 /* Pods-BBTabBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBTabBar.release.xcconfig"; path = "Target Support Files/Pods-BBTabBar/Pods-BBTabBar.release.xcconfig"; sourceTree = "<group>"; };
+		891BF928D5732B67E3B30D40 /* Pods-BBTabBar-BBTabBarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBTabBar-BBTabBarTests.debug.xcconfig"; path = "Target Support Files/Pods-BBTabBar-BBTabBarTests/Pods-BBTabBar-BBTabBarTests.debug.xcconfig"; sourceTree = "<group>"; };
+		981137C003758EECCCED625C /* Pods_BBTabBar_BBTabBarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BBTabBar_BBTabBarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C00C7A1224A0D2DB930624B7 /* Pods_BBTabBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BBTabBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F17C79D8EE5CEA0AB9535CE4 /* Pods-BBTabBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBTabBar.debug.xcconfig"; path = "Target Support Files/Pods-BBTabBar/Pods-BBTabBar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBE542B9575D5E518C89575D /* Pods_BBTabBar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,18 +55,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D1C1D32269328F200AFCDEF /* BBTabBar.framework in Frameworks */,
+				DF00948825BAE3893752686D /* Pods_BBTabBar_BBTabBarTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00995341B8BA1DAEB901C8C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F17C79D8EE5CEA0AB9535CE4 /* Pods-BBTabBar.debug.xcconfig */,
+				689D9A062C951B8781771134 /* Pods-BBTabBar.release.xcconfig */,
+				891BF928D5732B67E3B30D40 /* Pods-BBTabBar-BBTabBarTests.debug.xcconfig */,
+				3468BA07303712CFE0D13490 /* Pods-BBTabBar-BBTabBarTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		1D1C1D1E269328F200AFCDEF = {
 			isa = PBXGroup;
 			children = (
 				1D1C1D2A269328F200AFCDEF /* BBTabBar */,
 				1D1C1D35269328F200AFCDEF /* BBTabBarTests */,
 				1D1C1D29269328F200AFCDEF /* Products */,
+				00995341B8BA1DAEB901C8C5 /* Pods */,
+				987A5CD8A786B6F182EAE6CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +113,15 @@
 			path = BBTabBarTests;
 			sourceTree = "<group>";
 		};
+		987A5CD8A786B6F182EAE6CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C00C7A1224A0D2DB930624B7 /* Pods_BBTabBar.framework */,
+				981137C003758EECCCED625C /* Pods_BBTabBar_BBTabBarTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -107,6 +140,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D1C1D3C269328F200AFCDEF /* Build configuration list for PBXNativeTarget "BBTabBar" */;
 			buildPhases = (
+				89C9C45EA4DB2B3EC164C6A6 /* [CP] Check Pods Manifest.lock */,
 				1D1C1D23269328F200AFCDEF /* Headers */,
 				1D1C1D24269328F200AFCDEF /* Sources */,
 				1D1C1D25269328F200AFCDEF /* Frameworks */,
@@ -125,6 +159,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D1C1D3F269328F200AFCDEF /* Build configuration list for PBXNativeTarget "BBTabBarTests" */;
 			buildPhases = (
+				06C2FF1AC1794E8BE8BFD410 /* [CP] Check Pods Manifest.lock */,
 				1D1C1D2D269328F200AFCDEF /* Sources */,
 				1D1C1D2E269328F200AFCDEF /* Frameworks */,
 				1D1C1D2F269328F200AFCDEF /* Resources */,
@@ -192,6 +227,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06C2FF1AC1794E8BE8BFD410 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BBTabBar-BBTabBarTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89C9C45EA4DB2B3EC164C6A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BBTabBar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D1C1D24269328F200AFCDEF /* Sources */ = {
@@ -345,6 +427,7 @@
 		};
 		1D1C1D3D269328F200AFCDEF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F17C79D8EE5CEA0AB9535CE4 /* Pods-BBTabBar.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -371,6 +454,7 @@
 		};
 		1D1C1D3E269328F200AFCDEF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 689D9A062C951B8781771134 /* Pods-BBTabBar.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -396,6 +480,7 @@
 		};
 		1D1C1D40269328F200AFCDEF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 891BF928D5732B67E3B30D40 /* Pods-BBTabBar-BBTabBarTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -415,6 +500,7 @@
 		};
 		1D1C1D41269328F200AFCDEF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3468BA07303712CFE0D13490 /* Pods-BBTabBar-BBTabBarTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
